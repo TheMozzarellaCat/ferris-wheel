@@ -1,4 +1,5 @@
-/* SVG colors */
+/*svg colors */
+
 .cls-1 {
     fill: #e8f3e2;
   }
@@ -307,90 +308,231 @@
   }
   
   body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
   }
   
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 98vw;
-    height: 100vh;
-  }
-  
-  #needles,
-  #arms,
-  #cabins,
-  .cabin,
-  #balloon,
-  #bunch_of_balloons1,
-  #bunch_of_balloons,
-  #clouds-front,
-  #clouds-back {
+  #needles {
+    -webkit-animation: rotate 5s linear infinite;
+            animation: rotate 5s linear infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
     transform-box: fill-box;
-    transform-origin: center;
+  }
+  
+  @-webkit-keyframes rotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg)
+    }
+    100% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg)
+    }
   }
   
   @keyframes rotate {
     0% {
-      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg)
     }
     100% {
-      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg)
+    }
+  }
+  
+  #arms {
+    -webkit-animation: rotate-out 5s linear infinite;
+            animation: rotate-out 5s linear infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  @-webkit-keyframes rotate-out {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg)
+    }
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg)
     }
   }
   
   @keyframes rotate-out {
     0% {
-      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg)
     }
     100% {
-      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg)
+    }
+  }
+  
+  #cabins {
+    -webkit-animation: cabin-transit 5s linear infinite;
+            animation: cabin-transit 5s linear infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  @-webkit-keyframes cabin-transit {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg)
+    }
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg)
     }
   }
   
   @keyframes cabin-transit {
     0% {
-      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg)
     }
     100% {
-      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg)
+    }
+  }
+  
+  .cabin {
+    -webkit-animation: cabin-transform 5s linear infinite;
+            animation: cabin-transform 5s linear infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  @-webkit-keyframes cabin-transform {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg)
     }
   }
   
   @keyframes cabin-transform {
     0% {
-      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
     }
     100% {
-      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg)
+    }
+  }
+  
+  #balloon,
+  #bunch_of_balloons1,
+  #bunch_of_balloons {
+    -webkit-animation: balloon-anim 5s linear infinite;
+            animation: balloon-anim 5s linear infinite;
+    -webkit-transform-origin: center;
+        -ms-transform-origin: center;
+            transform-origin: center;
+    transform-box: fill-box;
+  }
+  
+  @-webkit-keyframes balloon-anim {
+    0% {
+      -webkit-transform: rotate(0deg) translate(0);
+              transform: rotate(0deg) translate(0)
+    }
+    25% {
+      -webkit-transform: rotate(2deg) translateY(5px);
+              transform: rotate(2deg) translateY(5px)
+    }
+    50% {
+      -webkit-transform: rotate(-2deg) translateY(-5px);
+              transform: rotate(-2deg) translateY(-5px)
+    }
+    75% {
+      -webkit-transform: rotate(-2deg) translateY(5px);
+              transform: rotate(-2deg) translateY(5px)
+    }
+    100% {
+      -webkit-transform: rotate(0deg) translate(0);
+              transform: rotate(0deg) translate(0)
     }
   }
   
   @keyframes balloon-anim {
     0% {
-      transform: rotate(0deg) translate(0);
+      -webkit-transform: rotate(0deg) translate(0);
+              transform: rotate(0deg) translate(0)
     }
     25% {
-      transform: rotate(2deg) translateY(5px);
+      -webkit-transform: rotate(2deg) translateY(5px);
+              transform: rotate(2deg) translateY(5px)
     }
     50% {
-      transform: rotate(-2deg) translateY(-5px);
+      -webkit-transform: rotate(-2deg) translateY(-5px);
+              transform: rotate(-2deg) translateY(-5px)
     }
     75% {
-      transform: rotate(-2deg) translateY(5px);
+      -webkit-transform: rotate(-2deg) translateY(5px);
+              transform: rotate(-2deg) translateY(5px)
     }
     100% {
-      transform: rotate(0deg) translate(0);
+      -webkit-transform: rotate(0deg) translate(0);
+              transform: rotate(0deg) translate(0)
+    }
+  }
+  
+  #clouds-front {
+    -webkit-animation: cloud-transit infinite ease-in-out 5s;
+            animation: cloud-transit infinite ease-in-out 5s;
+  }
+  
+  #clouds-back {
+    -webkit-animation: cloud-transit-2 infinite ease-out 5s;
+            animation: cloud-transit-2 infinite ease-out 5s;
+  }
+  
+  @-webkit-keyframes cloud-transit {
+    0% {
+      opacity: 0
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(-5%);
+              transform: translateX(-5%);
+      opacity: 0;
     }
   }
   
   @keyframes cloud-transit {
+    0% {
+      opacity: 0
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(-5%);
+              transform: translateX(-5%);
+      opacity: 0;
+    }
+  }
+  
+  @-webkit-keyframes cloud-transit-2 {
     0% {
       opacity: 0;
     }
@@ -398,8 +540,9 @@
       opacity: 1;
     }
     100% {
-      transform: translateX(-5%);
       opacity: 0;
+      -webkit-transform: translateX(5%);
+              transform: translateX(5%);
     }
   }
   
@@ -412,7 +555,7 @@
     }
     100% {
       opacity: 0;
-      transform: translateX(5%);
+      -webkit-transform: translateX(5%);
+              transform: translateX(5%);
     }
   }
-  
